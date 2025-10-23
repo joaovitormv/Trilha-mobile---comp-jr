@@ -1,9 +1,13 @@
 import React from 'react'
 import { Text, View, SafeAreaView } from "react-native";
-
+import Header from "../components/Header";
 
 export default function Index() {
     return (
-    <View>escrevendo</View>
-  );
+    <SafeAreaView>
+        <Header/>
+        <View>escrevendo</View>
+    </SafeAreaView>
+    
+);
 }
