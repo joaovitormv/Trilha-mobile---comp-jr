@@ -1,4 +1,6 @@
-export const mockCountries = [
+import { Country } from '../../app/types';
+
+export const mockCountries: Country[] = [
   {
     name: {
       common: 'Brazil', 
