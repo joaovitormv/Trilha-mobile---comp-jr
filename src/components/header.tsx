@@ -15,7 +15,7 @@ export default function Header({showBackButton = false}){
     return(
         <View style={styles.container}>
         <Image
-            source={require('../../assets/images/icon.png')}
+            source={require('../assets/images/icon.png')}
             style={styles.logo}
         />
 

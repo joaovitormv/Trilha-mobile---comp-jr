@@ -20,7 +20,7 @@ export default function Card({item, width}: CountryCardProps){
     const population = item.population.toLocaleString();
 
     const handlePress = () => {
-        router.push(`/country/${encodeURIComponent(name)}`);
+        router.push(`/${encodeURIComponent(name)}`);
     }
 
     return (
