@@ -11,17 +11,23 @@ const LIST_PADDING = 8;
 
 
 export default function Index() {
-    const [countries, setCountries] = useState<Country[]>(mockCountries);
+    const [countries, setCountries] = useState<Country[]>([]);
+    const [isLoading, setIsLoading] = useState<boolean>(false);
+    const [error, setError] = useState<string | null>(null);
     
     const {width} = useWindowDimensions();
 
     const numColumns = Math.max(1, Math.floor(width / CARD_MIN_WIDTH));
     const columnWidth = (width - (LIST_PADDING * 2)) / numColumns
 
+    const handleSearch = (searchText: string ) =>{
+      console.log(searchText); //terminar isso
+    }
+
     return (
     <SafeAreaView>
         <Header/>
-        <SearchBar/>
+        <SearchBar onSearch={handleSearch}/>
         <FlatList
             data={countries}
             renderItem={({item}) => <Card item={item} width={columnWidth}/>}
