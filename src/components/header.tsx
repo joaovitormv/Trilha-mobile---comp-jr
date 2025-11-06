@@ -34,7 +34,7 @@ export default function Header({showBackButton = false}){
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: "red",
+        backgroundColor: "black",
         height: 60,
         flexDirection: 'row',
         alignItems: 'center',
@@ -45,8 +45,8 @@ const styles = StyleSheet.create({
         marginRight: 10,
     },
     logo:{
-        width: 30,
-        height: 30,
+        width: 40,
+        height: 40,
     },
     Text:{
         color: "white",
