@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { FlatList, SafeAreaView, StyleSheet, useWindowDimensions } from "react-native";
+import { FlatList, SafeAreaView, StyleSheet, useWindowDimensions, View, Text, ActivityIndicator } from "react-native";
 import { searchCountryByName } from '@/src/api/restCountries';
 import Card from '../src/components/card';
 import Header from "../src/components/header";
 import SearchBar from "../src/components/searchBar";
 import { Country } from './types';
+import ContentDisplay from '@/src/components/contentDisplay';
 
 const CARD_MIN_WIDTH = 180;
 const LIST_PADDING = 8;
@@ -44,20 +45,14 @@ export default function Index() {
     <SafeAreaView>
       <Header />
       <SearchBar onSearch={handleSearch} />
-      <FlatList
-        data={countries}
-        renderItem={({ item }) => <Card item={item} width={columnWidth} />}
-        keyExtractor={(item) => item.name.common}
-        style={styles.list}
+      <ContentDisplay
+        isLoading={isLoading}
+        error={error}
+        countries={countries}
         numColumns={numColumns}
-        key={numColumns}
-
+        columnWidth={columnWidth}
       />
     </SafeAreaView>
 
   );
-} const styles = StyleSheet.create({
-  list: {
-    paddingHorizontal: 8,
-  },
-});
+}
