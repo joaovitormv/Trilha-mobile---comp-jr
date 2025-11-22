@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import {Text, SafeAreaView, View, ScrollView, Image, StyleSheet} from 'react-native';
+import {Text, View, ScrollView, Image, StyleSheet} from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useLocalSearchParams } from 'expo-router';
 import Header from '../src/components/header';
 import { Country } from './types';

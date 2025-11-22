@@ -5,9 +5,10 @@ import {Ionicons} from '@expo/vector-icons'
 
 type SearchBarProps = {
   onSearch: (query: string) => void;
+  onFilterPress: () => void;
 }; //o atributo onSearch é uma função do tipo void.
 
-export default function SearchBar({onSearch}: SearchBarProps){
+export default function SearchBar({onSearch, onFilterPress}: SearchBarProps){
     const [query, setQuery] = useState<string>(""); //armazena o texto que o user está digitando
     return (
         <View style={styles.searchContainer}>
@@ -20,7 +21,7 @@ export default function SearchBar({onSearch}: SearchBarProps){
                 onSubmitEditing={() => onSearch(query)}
                 returnKeyType="search" //muda o botao de enter para search
             />
-            <TouchableOpacity style={styles.filterButton}>
+            <TouchableOpacity style={styles.filterButton} onPress={onFilterPress}>
                 <Ionicons name="options-outline" size={24} color="gray"/>
             </TouchableOpacity>
         </View>

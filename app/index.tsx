@@ -1,20 +1,22 @@
 import React, { useState } from 'react';
-import { FlatList, SafeAreaView, StyleSheet, useWindowDimensions, View, Text, ActivityIndicator } from "react-native";
-import { searchCountryByName } from '@/src/api/restCountries';
+import { FlatList, StyleSheet, useWindowDimensions, View, Text, ActivityIndicator } from "react-native";
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { searchCountryByName, getCountriesByRegion } from '@/src/api/restCountries';
 import Card from '../src/components/card';
 import Header from "../src/components/header";
 import SearchBar from "../src/components/searchBar";
 import { Country } from './types';
 import ContentDisplay from '@/src/components/contentDisplay';
+import RegionFilter from '@/src/components/regionFilter';
 
-const CARD_MIN_WIDTH = 180;
+const CARD_MIN_WIDTH = 160;
 const LIST_PADDING = 8;
-
 
 export default function Index() {
   const [countries, setCountries] = useState<Country[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
+  const [isModalVisible, setModalVisible] = useState(false);
 
   const { width } = useWindowDimensions();
 
@@ -40,11 +42,26 @@ export default function Index() {
     }
   }
 
+  async function handleRegionSelect(region: string){
+    setIsLoading(true);
+    setError(null);
+    setCountries([]);
+
+    try{
+      const data = await getCountriesByRegion(region);
+      setCountries(data);
+    }catch(e){
+      setError("Erro ao carregar região");
+    }finally{
+      setIsLoading(false);
+    }
+  }
+
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
       <Header />
-      <SearchBar onSearch={handleSearch} />
+      <SearchBar onSearch={handleSearch} onFilterPress={()=> setModalVisible(true)}/>
       <ContentDisplay
         isLoading={isLoading}
         error={error}
@@ -52,7 +69,19 @@ export default function Index() {
         numColumns={numColumns}
         columnWidth={columnWidth}
       />
+      <RegionFilter
+        visible={isModalVisible}
+        onClose={() => setModalVisible(false)}
+        onSelect={handleRegionSelect}
+      />
     </SafeAreaView>
 
   );
 }
+
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1
+  }
+})

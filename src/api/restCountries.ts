@@ -13,3 +13,12 @@ export const searchCountryByName = async (name: string): Promise<Country[]> =>{
     return data;
 
 }
+
+export const getCountriesByRegion = async (region: string): Promise<Country[]> =>{
+    const response = await fetch(`${API_URL}/region/${region.toLowerCase()}`);
+    if(!response.ok){
+        throw new Error('Não foi possível carregar os países desta região');
+    }
+    const data: Country[] = await response.json();
+    return data;
+}
