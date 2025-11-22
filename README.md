@@ -4,7 +4,7 @@ Um aplicativo mobile desenvolvido em React Native para pesquisar, filtrar e visu
 📲 Instalação no Android (APK)
 Para testar no celular sem precisar de ambiente de desenvolvimento, baixe e instale o APK:
 
-⬇️ Baixar APK (Install)
+https://expo.dev/accounts/joaovitormv/projects/paises/builds/9763e3b8-b48a-4f99-8929-c10334783f0b
 
 ✨ FUNCIONALIDADES
 🔍 Busca por texto
