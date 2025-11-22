@@ -37,21 +37,18 @@ Nota: A única exceção foi a pasta app, que tive que colocar fora do src pois 
 📦 COMO RODAR (Desenvolvimento)
 Pré-requisitos: Node.js instalado.
 
-1. Clone este repositório:
-
-Bash
+1. Clone este repositório
 
 git clone https://github.com/joaovitormv/Trilha-mobile---comp-jr.git
+
 2. Instale as dependências:
 
-Bash
-
 npm install
+
 3. Inicie o servidor: Para iniciar o servidor de desenvolvimento (Metro Bundler), execute o comando abaixo. A flag --clear é recomendada para garantir que não haja cache antigo; A flag --tunnel é para conectar mesmo em redes distintas:
 
-Bash
-
 npx expo start --clear --tunnel
+
 🧪 Como testar
 No PC: Pressione a tecla w no seu terminal. O app abrirá no seu navegador padrão.
 
