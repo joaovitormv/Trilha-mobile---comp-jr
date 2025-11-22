@@ -14,6 +14,8 @@ Detalhes completos;
 
 Feedback Visual;
 
+Deploy por apk feito;
+
 TECNOLOGIAS USADAS
 
 React Native e TypeScript: Escolhidos para criar uma aplicação nativa performática com a segurança de tipagem estática, essencial para lidar com os objetos complexos retornados pela API.
@@ -33,6 +35,10 @@ A unica excessão foi a pasta "app", que tive que colocar fora do src pois estav
 
 
 COMO RODAR
+
+No android: baixar e instalar o apk: https://expo.dev/accounts/joaovitormv/projects/paises/builds/9763e3b8-b48a-4f99-8929-c10334783f0b#:~:text=APK-,Install,-Open%20with%20Orbit
+
+
 Pré-requisitos: Node.js instalado
 
 1 - Clone este repositório:
