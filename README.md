@@ -1,5 +1,3 @@
-Aqui está o seu README formatado. Mantive todo o conteúdo original, apenas aplicando a formatação Markdown (títulos, listas, blocos de código e emojis) para deixá-lo visualmente profissional e organizado para o GitHub.
-
 🌍 PAÍSES DO MUNDO
 Um aplicativo mobile desenvolvido em React Native para pesquisar, filtrar e visualizar informações detalhadas sobre países de todo o globo.
 
